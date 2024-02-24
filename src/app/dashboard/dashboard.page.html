@@ -1,0 +1,46 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"> </ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title>Dashboard</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Selec your currency</ion-card-title>
+    </ion-card-header>
+    <div>
+      <ion-checkbox>Euro</ion-checkbox>
+      <ion-checkbox>Dolar</ion-checkbox>
+      <ion-checkbox>Peso</ion-checkbox>
+    </div>
+
+    <ion-card-content>
+      <ion-input
+        class="tesxt"
+        size="large"
+        type="number"
+        name="money"
+        id=""
+        placeholder="Enter cuantity"
+      />
+      <ion-button (click)="converter()" expand="block" shape="round">
+        Convert Currency
+      </ion-button>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card *ngIf="convertion !== 0"> 
+    <h2>
+        {{convertion}}
+    </h2>
+  
+   </ion-card>
+</ion-content>
